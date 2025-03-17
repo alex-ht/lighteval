@@ -185,6 +185,7 @@ class VLLMModel(LightevalModel):
             "seed": 1234,
             "enable_prefix_caching": False,
             "enable_chunked_prefill": False,
+            "enforce_eager": True,
         }
         if int(config.data_parallel_size) > 1:
             self.model_args["distributed_executor_backend"] = "ray"
